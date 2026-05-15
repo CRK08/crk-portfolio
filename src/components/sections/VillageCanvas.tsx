@@ -9,12 +9,12 @@ import ProjectsOverlay from "@/components/sections/ProjectsOverlay";
 import EducationOverlay from "@/components/sections/EducationOverlay";
 import ContactOverlay from "@/components/sections/ContactOverlay";
 
-const FRAME_COUNT = 520;
+const FRAME_COUNT = 260;
 
-// Clip split: clip1 = frames 1–400 (400 frames), clip2 = frames 401–520 (120 frames)
+// Clip split: clip1 = frames 1–200 (200 frames), clip2 = frames 201–260 (60 frames)
 // Each clip gets 50% of scroll distance so both play at equal perceived speed.
-const CLIP1_FRAMES = 400; // frames 0001–0400
-const CLIP2_FRAMES = 120; // frames 0401–0520
+const CLIP1_FRAMES = 200; // frames 0001–0200
+const CLIP2_FRAMES = 60;  // frames 0201–0260
 
 // Each nav jump point is centred inside its card window.
 // show < nav_progress < hide for every section.

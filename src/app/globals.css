@@ -189,15 +189,15 @@ body.loading {
 
 /* ─── Scroll Animation Section Heights ───────────────────────── */
 .scroll-animation {
-  height: 5500vh;
+  height: 2500vh;
 }
 
 @media (max-width: 1024px) {
-  .scroll-animation { height: 4000vh; }
+  .scroll-animation { height: 2000vh; }
 }
 
 @media (max-width: 768px) {
-  .scroll-animation { height: 3000vh; }
+  .scroll-animation { height: 1500vh; }
 }
 
 /* ─── Overlay Transitions ────────────────────────────────────── */
