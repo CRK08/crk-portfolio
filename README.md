@@ -4,7 +4,7 @@
 
 ## Live Demo
 
-🔗 [kaviyarasan-portfolio.vercel.app](https://kaviyarasan-portfolio.vercel.app)
+🔗 [crk-portfolio.vercel.app]([https://crk-portfolio.vercel.app/])
 
 ---
 
