@@ -4,7 +4,7 @@
 
 ## Live Demo
 
-🔗 [crk-portfolio.vercel.app]([https://crk-portfolio.vercel.app/])
+🔗 [crk-portfolio.vercel.app](https://crk-portfolio.vercel.app/)
 
 ---
 
