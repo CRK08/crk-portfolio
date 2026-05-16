@@ -41,7 +41,9 @@ export default function VillageCanvas() {
   const forcedTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const [loadProgress, setLoadProgress] = useState(0);
-  const [loaded, setLoaded] = useState(true); // start immediately, frames load progressively
+  const [framesLoaded, setFramesLoaded] = useState(false);
+  const [minTimePassed, setMinTimePassed] = useState(false);
+  const loaded = framesLoaded && minTimePassed;
   const [visibleOverlays, setVisibleOverlays] = useState<Set<OverlayId>>(
     new Set(["hero"])
   );
@@ -107,10 +109,15 @@ export default function VillageCanvas() {
       img.onload = () => {
         loadedCount++;
         setLoadProgress(loadedCount / FRAME_COUNT);
+        if (loadedCount >= FRAME_COUNT * 0.95) setFramesLoaded(true);
         // Draw frame 1 as soon as it's ready
         if (idx === 0) drawFrame(imgs[0]);
       };
-      img.onerror = () => { loadedCount++; };
+      img.onerror = () => {
+        loadedCount++;
+        setLoadProgress(loadedCount / FRAME_COUNT);
+        if (loadedCount >= FRAME_COUNT * 0.95) setFramesLoaded(true);
+      };
       imgs[idx] = img;
     }
     framesRef.current = imgs;
@@ -133,6 +140,23 @@ export default function VillageCanvas() {
     window.addEventListener("navjump", onNavJump);
     return () => window.removeEventListener("navjump", onNavJump);
   }, []);
+
+  // ── Minimum Loading Time & Scroll Lock ────────────────────────
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setMinTimePassed(true);
+    }, 3500); // 3.5 seconds minimum
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    if (!loaded) {
+      document.body.classList.add("loading");
+    } else {
+      document.body.classList.remove("loading");
+    }
+    return () => document.body.classList.remove("loading");
+  }, [loaded]);
 
   // ── Scroll handler ────────────────────────────────────────────
   useEffect(() => {
@@ -198,6 +222,30 @@ export default function VillageCanvas() {
 
   return (
     <>
+      {/* ── Premium Loading Screen ── */}
+      <div
+        className={`fixed inset-0 z-50 flex flex-col items-center justify-center bg-background transition-opacity duration-1000 ${loaded ? "opacity-0 pointer-events-none" : "opacity-100 pointer-events-auto"
+          }`}
+      >
+        <div className="flex flex-col items-center gap-6 max-w-md mx-auto text-center px-6">
+          <h1 className="heading-hero text-4xl md:text-5xl">Kaviyarasan</h1>
+          <p className="tamil-accent text-xl">Cinematic Portfolio</p>
+
+          <div className="w-48 h-[2px] bg-white/10 rounded-full overflow-hidden mt-8 relative">
+            <div
+              className="absolute top-0 left-0 h-full bg-primary transition-all duration-300 ease-out"
+              style={{ width: `${loadProgress * 100}%` }}
+            />
+          </div>
+
+          {/* Mobile Warning */}
+          <div className="md:hidden mt-12 p-5 rounded-2xl bg-white/5 border border-white/10 text-sm text-white/70 leading-relaxed">
+            <span className="block mb-2 text-primary font-bold tracking-widest uppercase text-xs">Recommended</span>
+            For the best cinematic experience, please rotate to landscape view and in desktop view or open on a desktop computer.
+          </div>
+        </div>
+      </div>
+
       {/* Tall scroll section */}
       <section
         ref={sectionRef}
