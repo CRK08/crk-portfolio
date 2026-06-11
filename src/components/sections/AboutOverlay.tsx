@@ -37,9 +37,9 @@ export default function AboutOverlay({ visible }: AboutOverlayProps) {
       {/* Scrollable content */}
       <div ref={scrollRef} style={{ overflow: "hidden", maxHeight: "calc(100vh - 19rem)" }}>
         <p className="body-text" style={{ fontSize: "0.82rem", marginBottom: "0.9rem" }}>
-          I'm Kaviyarasan C, a final-year B.E. CSE student from Coimbatore, Tamil Nadu, focused on full-stack web and mobile development with AI integration.
-          Smart Uzhavar is a live platform that gives small and marginal farmers real-time Mandi prices, AI-powered crop advisory via Gemini API, and community support — built with Next.js, PostgreSQL, and deployed on Vercel.
-          Travid is an accessibility-first Flutter app for visually impaired users with voice biometric security, real-time navigation, and offline maps — published in IJSREM, November 2025.
+          I'm Kaviyarasan C, a final-year B.E. CSE student from Coimbatore, Tamil Nadu, focused on full-stack web and mobile development with AI integration.<br />
+          Smart Uzhavar is a live platform that gives small and marginal farmers real-time Mandi prices, AI-powered crop advisory via Gemini API, and community support — built with Next.js, PostgreSQL, and deployed on Vercel.<br />
+          Travid is an accessibility-first Flutter app for visually impaired users with voice biometric security, real-time navigation, and offline maps — published in IJSREM, November 2025.<br />
           I'm looking for full-stack or AI application developer roles where I can contribute from day one.
         </p>
 
