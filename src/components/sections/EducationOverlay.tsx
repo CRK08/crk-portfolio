@@ -5,13 +5,13 @@ import { OverlayCard } from "@/components/ui/OverlayCard";
 interface EducationOverlayProps { visible: boolean; }
 
 const TIMELINE = [
-  { emoji: "🎓", title: "BE — Computer Science & Engineering",     subtitle: "Hindusthan College of Engineering & Technology, Coimbatore", detail: "CGPA: 8.4 · 2022–Present", accent: true },
-  { emoji: "📰", title: "Journal Publication — IJSREM",            subtitle: "Inclusive Mobility for Normal & Blind Users (Travid)",       detail: "November 2025",             accent: false },
-  { emoji: "🏆", title: "Uyir Hackathon — Final Round Runner-Up",  subtitle: "",                                                           detail: "",                          accent: false },
-  { emoji: "⚙️", title: "Department Hackathon — Internal Selection", subtitle: "",                                                         detail: "",                          accent: false },
-  { emoji: "📜", title: "NPTEL Certifications",                    subtitle: "Cloud Computing · Cyber Security & Privacy",                 detail: "",                          accent: false },
-  { emoji: "👑", title: "Event Coordinator — Paper Presentation",  subtitle: "30+ teams, 60–120 participants",                            detail: "",                          accent: false },
-  { emoji: "📚", title: "HSC — Thanthai Roever HSS, Perambalur",  subtitle: "",                                                           detail: "86%",                        accent: false },
+  { emoji: "🎓", title: "BE — Computer Science & Engineering", subtitle: "Hindusthan College of Engineering & Technology, Coimbatore", detail: "CGPA: 8.4 · 2022–Present", accent: true },
+  { emoji: "📚", title: "Higher Secondary Certificate (HSC)", subtitle: "Thanthai Hans Roever Higher Secondary School, Perambalur", detail: "86% · 2023", accent: false },
+  { emoji: "📰", title: "Journal Publication — IJSREM", subtitle: "Inclusive Mobility for Normal & Blind Users (Travid)", detail: "November 2025", accent: false },
+  { emoji: "🏆", title: "Uyir Hackathon", subtitle: "Final Round Runner-Up", detail: "", accent: false },
+  { emoji: "⚙️", title: "Department Hackathon", subtitle: "Internal Selection", detail: "", accent: false },
+  { emoji: "📜", title: "NPTEL Certifications", subtitle: "Cloud Computing · Cyber Security & Privacy", detail: "", accent: false },
+  { emoji: "👑", title: "Event Coordinator — Paper Presentation", subtitle: "30+ teams, 60–120 participants", detail: "", accent: false },
 ];
 
 const PAGE_SIZE = 3;

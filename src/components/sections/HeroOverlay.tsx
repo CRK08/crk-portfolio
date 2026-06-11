@@ -8,10 +8,10 @@ export default function HeroOverlay({ visible }: HeroOverlayProps) {
   return (
     <OverlayCard visible={visible} side="center" transition="1s" width="min(600px, 94vw)">
       <div className="flex flex-col w-full max-w-[560px] mt-8 md:mt-0">
-        
+
         {/* Top Section: Text on Left, Image on Right */}
         <div className="flex flex-col md:flex-row items-center justify-between w-full gap-2 md:gap-6">
-          
+
           {/* Left Text (Welcome, Name, Role) */}
           <div className="flex-1 flex flex-col items-center">
             {/* Caveat accent */}
@@ -21,11 +21,11 @@ export default function HeroOverlay({ visible }: HeroOverlayProps) {
 
             {/* Mobile Profile Photo */}
             <div className="md:hidden shrink-0 my-2">
-              <Image 
-                src="/profile.jpeg" 
-                alt="Kaviyarasan" 
-                width={86} 
-                height={86} 
+              <Image
+                src="/profile.jpeg"
+                alt="Kaviyarasan"
+                width={86}
+                height={86}
                 className="hero-profile-photo"
                 style={{ borderRadius: "50%", objectFit: "cover", objectPosition: "center top", border: "2px solid rgba(200, 168, 75, 0.6)", boxShadow: "0 0 0 4px rgba(200, 168, 75, 0.12), 0 8px 32px rgba(0, 0, 0, 0.4)", width: "86px", height: "86px" }}
               />
@@ -38,17 +38,17 @@ export default function HeroOverlay({ visible }: HeroOverlayProps) {
 
             {/* Role */}
             <p className="label-badge text-center w-full" style={{ marginBottom: "0.2rem" }}>
-              Full Stack Developer · AI Integration · Freelancer
+              Full Stack Developer · AI Enthusiast · Open to SDE Roles
             </p>
           </div>
 
           {/* Desktop Profile Photo */}
           <div className="hidden md:flex shrink-0">
-            <Image 
-              src="/profile.jpeg" 
-              alt="Kaviyarasan" 
-              width={120} 
-              height={120} 
+            <Image
+              src="/profile.jpeg"
+              alt="Kaviyarasan"
+              width={120}
+              height={120}
               className="hero-profile-photo"
               style={{ borderRadius: "50%", objectFit: "cover", objectPosition: "center top", border: "2px solid rgba(200, 168, 75, 0.6)", boxShadow: "0 0 0 4px rgba(200, 168, 75, 0.12), 0 8px 32px rgba(0, 0, 0, 0.4)", width: "120px", height: "120px" }}
             />
@@ -63,8 +63,7 @@ export default function HeroOverlay({ visible }: HeroOverlayProps) {
         <div className="flex flex-col items-center w-full">
           {/* One liner */}
           <p className="body-text w-full" style={{ textAlign: "center", marginBottom: "1rem" }}>
-            I build AI-powered web and mobile products that solve real-world
-            problems — from farm fields to city streets.
+            I build web and mobile products with AI integration — from farm fields to city streets.
           </p>
 
           {/* CTA Buttons */}
